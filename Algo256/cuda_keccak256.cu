@@ -114,7 +114,7 @@ void keccak256_gpu_hash_80(uint32_t threads, uint32_t startNounce,  uint32_t *co
 		uint2 s[25];
 		
 		s[9] = make_uint2(c_PaddedMessage80[9].x, cuda_swab32(nounce));
-		s[10] = make_uint2(1, 0);
+		s[10] = make_uint2(6, 0);
 		s[16] = make_uint2(0, 0x80000000);
 
 		tmpxor[0] = c_PaddedMessage80[0] ^ c_PaddedMessage80[5] ^ s[10];
@@ -261,7 +261,7 @@ void keccak256_gpu_hash_32(uint32_t threads, uint32_t startNounce, uint64_t *out
 			if (i<4) keccak_gpu_state[i] = vectorize(outputHash[i*threads+thread]);
 			else     keccak_gpu_state[i] = UINT2(0, 0);
 		}
-		keccak_gpu_state[4]  = UINT2(1, 0);
+		keccak_gpu_state[4]  = UINT2(6, 0);
 		keccak_gpu_state[16] = UINT2(0, 0x80000000);
 		keccak_block(keccak_gpu_state);
 
