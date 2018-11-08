@@ -116,7 +116,7 @@ void keccak256_gpu_hash_80(int threads, uint32_t startNounce, void *outputHash, 
 		keccak_gpu_state[10]=0x0000000000000006;
 		keccak_gpu_state[16]=0x8000000000000000;
 
-		keccak_block(keccak_gpu_state,keccak_round_constants);
+		keccak_block((keccak_block(keccak_gpu_state,keccak_round_constants),keccak_round_constants);
 
 		bool rc = false;
 		if (keccak_gpu_state[3] <= ((uint64_t*)pTarget)[3]) {rc = true;}
