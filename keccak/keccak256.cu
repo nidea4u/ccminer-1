@@ -66,7 +66,7 @@ extern "C" int scanhash_keccak256(int thr_id, uint32_t *pdata,
 		int order = 0;
 
 		uint32_t foundNonce = keccak256_cpu_hash_80(thr_id, throughput, pdata[19], d_hash[thr_id], order++);
-		if  (foundNonce != 0xffffffff)
+		/*if  (foundNonce != 0xffffffff)
 		{
 			uint32_t vhash64[8];
 			uint32_t Htarg = ptarget[7];
@@ -82,7 +82,7 @@ extern "C" int scanhash_keccak256(int thr_id, uint32_t *pdata,
 			} else {
 				applog(LOG_DEBUG, "GPU #%d: result for nounce %08x does not validate on CPU!", thr_id, foundNonce);
 			}
-		}
+		}*/
 
 		if ((uint64_t) pdata[19] + throughput > (uint64_t) max_nonce) {
 			pdata[19] = max_nonce;
