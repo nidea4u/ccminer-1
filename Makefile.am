@@ -87,7 +87,7 @@ endif
 nvcc_ARCH  = -gencode=arch=compute_61,code=sm_61
 nvcc_ARCH += -gencode=arch=compute_60,code=sm_60
 nvcc_ARCH += -gencode=arch=compute_52,code=sm_52
-nvcc_ARCH += -gencode=arch=compute_50,code=\sm_50\
+#nvcc_ARCH += -gencode=arch=compute_50,code=sm_50
 nvcc_ARCH += -gencode=arch=compute_37,code=sm_37
 nvcc_ARCH += -gencode=arch=compute_35,code=sm_35
 nvcc_ARCH += -gencode=arch=compute_30,code=sm_30
